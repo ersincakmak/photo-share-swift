@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		CA88A544291947B5003C6E67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA88A542291947B5003C6E67 /* Main.storyboard */; };
 		CA88A546291947BB003C6E67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA88A545291947BB003C6E67 /* Assets.xcassets */; };
 		CA88A549291947BB003C6E67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA88A547291947BB003C6E67 /* LaunchScreen.storyboard */; };
+		CA88A55129195A11003C6E67 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA88A55029195A11003C6E67 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		CA88A545291947BB003C6E67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA88A548291947BB003C6E67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA88A54A291947BB003C6E67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA88A55029195A11003C6E67 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				CA88A53C291947B5003C6E67 /* AppDelegate.swift */,
 				CA88A53E291947B5003C6E67 /* SceneDelegate.swift */,
+				CA88A55029195A11003C6E67 /* SettingsViewController.swift */,
 				CA88A540291947B5003C6E67 /* ViewController.swift */,
 				CA88A542291947B5003C6E67 /* Main.storyboard */,
 				CA88A545291947BB003C6E67 /* Assets.xcassets */,
@@ -103,7 +106,7 @@
 				};
 			};
 			buildConfigurationList = CA88A534291947B5003C6E67 /* Build configuration list for PBXProject "PhotoShareFirebase" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -141,6 +144,7 @@
 				CA88A541291947B5003C6E67 /* ViewController.swift in Sources */,
 				CA88A53D291947B5003C6E67 /* AppDelegate.swift in Sources */,
 				CA88A53F291947B5003C6E67 /* SceneDelegate.swift in Sources */,
+				CA88A55129195A11003C6E67 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
