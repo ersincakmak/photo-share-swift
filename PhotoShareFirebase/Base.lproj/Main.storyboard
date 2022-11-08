@@ -54,6 +54,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Sign In"/>
+                                        <connections>
+                                            <action selector="signInButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="trd-pX-JES"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ej-Qc-eE9">
                                         <rect key="frame" x="185" y="0.0" width="165" height="42"/>
@@ -68,6 +71,19 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FLP-rv-eJl">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="yOo-cq-G8t">
+                                        <rect key="frame" x="176.66666666666666" y="403.66666666666669" width="37" height="37"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="separatorColor"/>
+                                <constraints>
+                                    <constraint firstItem="yOo-cq-G8t" firstAttribute="centerX" secondItem="FLP-rv-eJl" secondAttribute="centerX" id="CTh-St-7ZO"/>
+                                    <constraint firstItem="yOo-cq-G8t" firstAttribute="centerY" secondItem="FLP-rv-eJl" secondAttribute="centerY" id="rfX-y6-KhU"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -76,21 +92,29 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="h4s-Ig-vlj" secondAttribute="trailing" constant="20" id="ECZ-9f-XAS"/>
                             <constraint firstItem="6KF-Ji-owf" firstAttribute="top" secondItem="k2a-vB-LYY" secondAttribute="bottom" constant="20" id="Kkb-UM-Uh5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6KF-Ji-owf" secondAttribute="trailing" constant="20" id="LmG-32-KpA"/>
+                            <constraint firstItem="FLP-rv-eJl" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Ml8-TT-cec"/>
                             <constraint firstItem="kBx-L2-86I" firstAttribute="top" secondItem="6KF-Ji-owf" secondAttribute="bottom" constant="20" id="Poo-ld-7L5"/>
                             <constraint firstItem="kBx-L2-86I" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Sh2-uU-Jde"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kBx-L2-86I" secondAttribute="trailing" constant="20" id="Tgf-kD-0JS"/>
+                            <constraint firstItem="FLP-rv-eJl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="W9j-I2-bod"/>
                             <constraint firstItem="k2a-vB-LYY" firstAttribute="top" secondItem="h5o-Mo-XEC" secondAttribute="bottom" constant="50" id="WSJ-ux-6AG"/>
                             <constraint firstItem="h4s-Ig-vlj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="XX6-f1-xJ8"/>
                             <constraint firstItem="h5o-Mo-XEC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Ycj-3G-F0c"/>
+                            <constraint firstItem="FLP-rv-eJl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bxn-zF-Ff9"/>
                             <constraint firstItem="h5o-Mo-XEC" firstAttribute="top" secondItem="h4s-Ig-vlj" secondAttribute="bottom" constant="8" symbolic="YES" id="fcg-3t-1Cv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="k2a-vB-LYY" secondAttribute="trailing" constant="20" id="iQy-pw-SoE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="h5o-Mo-XEC" secondAttribute="trailing" constant="20" id="ink-PN-XeB"/>
+                            <constraint firstAttribute="bottom" secondItem="FLP-rv-eJl" secondAttribute="bottom" id="jfq-A8-YGx"/>
                             <constraint firstItem="k2a-vB-LYY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="kXI-Db-the"/>
                             <constraint firstItem="6KF-Ji-owf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="mC9-ia-Rev"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7b3-Lf-OrE"/>
                     <connections>
+                        <outlet property="emailTextField" destination="k2a-vB-LYY" id="EYP-h2-OIX"/>
+                        <outlet property="indicator" destination="yOo-cq-G8t" id="rYD-ir-bos"/>
+                        <outlet property="loadingView" destination="FLP-rv-eJl" id="6CW-u4-KNZ"/>
+                        <outlet property="passwordTextField" destination="6KF-Ji-owf" id="V9I-an-6sZ"/>
                         <segue destination="RYl-yY-Eh1" kind="presentation" identifier="toTabBarVC" modalPresentationStyle="fullScreen" id="ACX-3H-OFR"/>
                     </connections>
                 </viewController>
@@ -123,7 +147,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi, Ersin!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pzy-wG-Z8G">
-                                <rect key="frame" x="20" y="57.000000000000007" width="350" height="25.333333333333336"/>
+                                <rect key="frame" x="20" y="57.000000000000007" width="350" height="26.333333333333336"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -206,6 +230,9 @@
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="separatorColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

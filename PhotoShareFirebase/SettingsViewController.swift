@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import FirebaseAuth
 
-class SettingsViewController: UIViewController {
-
+final class SettingsViewController: UIViewController, CustomAlertController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -16,7 +17,12 @@ class SettingsViewController: UIViewController {
     }
 
     @IBAction func signOutButtonTapped(_ sender: Any) {
-        performSegue(withIdentifier: "toInitialVC", sender: nil)
+        do {
+            try Auth.auth().signOut()
+            performSegue(withIdentifier: "toInitialVC", sender: nil)
+        } catch {
+            showAlert(message: error.localizedDescription, target: self)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
