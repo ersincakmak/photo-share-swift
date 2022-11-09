@@ -29,9 +29,9 @@ class UploadViewController: UIViewController {
     }
     
     private func resetValues(){
-        uploadButton.isEnabled = false
         imageView.image = UIImage(named: "select_image")
         textField.text = ""
+        uploadButton.isEnabled = false
     }
     
     @objc private func showOptions(){
@@ -59,7 +59,8 @@ class UploadViewController: UIViewController {
     
     private func validateItems(){
         guard
-            let _ = imageView.image,
+            let image = imageView.image,
+            image != UIImage(named: "select_image"),
             let text = textField.text,
             text != ""
         else {
@@ -82,7 +83,7 @@ class UploadViewController: UIViewController {
         guard
             let title = textField.text,
             let image = imageView.image,
-            let base64Image = image.jpegData(compressionQuality: 0.5)?.base64EncodedData()
+            let base64Image = image.jpegData(compressionQuality: 0.25)?.base64EncodedData()
         else { return }
         
         let post = [
