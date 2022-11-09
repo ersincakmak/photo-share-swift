@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA0057D0291BC4FE004CA34F /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0057CF291BC4FE004CA34F /* UploadViewController.swift */; };
 		CA857493291A65390070C580 /* AlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA857492291A65390070C580 /* AlertModel.swift */; };
 		CA88A53D291947B5003C6E67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA88A53C291947B5003C6E67 /* AppDelegate.swift */; };
 		CA88A53F291947B5003C6E67 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA88A53E291947B5003C6E67 /* SceneDelegate.swift */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		711D2002F8E27550D4D06786 /* Pods_PhotoShareFirebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotoShareFirebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF4DE484A218EB705A36EF01 /* Pods-PhotoShareFirebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoShareFirebase.debug.xcconfig"; path = "Target Support Files/Pods-PhotoShareFirebase/Pods-PhotoShareFirebase.debug.xcconfig"; sourceTree = "<group>"; };
+		CA0057CF291BC4FE004CA34F /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		CA857492291A65390070C580 /* AlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModel.swift; sourceTree = "<group>"; };
 		CA88A539291947B5003C6E67 /* PhotoShareFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoShareFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA88A53C291947B5003C6E67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 			children = (
 				CA88A53C291947B5003C6E67 /* AppDelegate.swift */,
 				CA88A53E291947B5003C6E67 /* SceneDelegate.swift */,
+				CA0057CF291BC4FE004CA34F /* UploadViewController.swift */,
 				CA88A55029195A11003C6E67 /* SettingsViewController.swift */,
 				CA88A540291947B5003C6E67 /* ViewController.swift */,
 				CA88A542291947B5003C6E67 /* Main.storyboard */,
@@ -217,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA88A541291947B5003C6E67 /* ViewController.swift in Sources */,
+				CA0057D0291BC4FE004CA34F /* UploadViewController.swift in Sources */,
 				CA88A53D291947B5003C6E67 /* AppDelegate.swift in Sources */,
 				CA88A53F291947B5003C6E67 /* SceneDelegate.swift in Sources */,
 				CA857493291A65390070C580 /* AlertModel.swift in Sources */,
