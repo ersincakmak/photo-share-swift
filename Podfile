@@ -9,5 +9,6 @@ target 'PhotoShareFirebase' do
   pod 'FirebaseAuth'
   pod 'FirebaseFirestore'
   pod 'FirebaseStorage'
-
+  pod 'Kingfisher'
+  
 end
