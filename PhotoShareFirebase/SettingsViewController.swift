@@ -10,10 +10,18 @@ import FirebaseAuth
 
 final class SettingsViewController: UIViewController, CustomAlertController {
     
+    @IBOutlet weak var hiLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        let userEmail = Auth.auth().currentUser?.email ?? "unknown"
+        let regex = try! NSRegularExpression(
+            pattern: "@.+",
+            options: NSRegularExpression.Options.caseInsensitive
+        )
+        let range = NSMakeRange(0, userEmail.count)
+        let username = regex.stringByReplacingMatches(in: userEmail, options: [], range: range, withTemplate: "")
+        hiLabel.text = "Hi, @\(username)!"
     }
 
     @IBAction func signOutButtonTapped(_ sender: Any) {

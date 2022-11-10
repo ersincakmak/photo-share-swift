@@ -223,6 +223,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="person" catalog="system" id="FUb-Jk-Ct4"/>
                     <connections>
+                        <outlet property="hiLabel" destination="Pzy-wG-Z8G" id="EC4-AK-sVD"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="toInitialVC" modalPresentationStyle="fullScreen" id="t7j-jb-DJH"/>
                     </connections>
                 </viewController>
