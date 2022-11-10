@@ -27,7 +27,24 @@ final class ViewController: UIViewController, CustomAlertController {
     }
     
     @IBAction func signUpButtonTapped(_ sender: Any) {
-        performSegue(withIdentifier: "toTabBarVC", sender: nil)
+        guard
+            let email = emailTextField.text,
+            let password = passwordTextField.text,
+            !email.isEmpty,
+            !password.isEmpty
+        else {
+            self.showAlert(message: "You must provide email and password.", target: self)
+            return
+        }
+        toggleLoading(.show)
+        Auth.auth().createUser(withEmail: email, password: password) { result, error in
+            self.toggleLoading(.hide)
+            if error != nil {
+                self.showAlert(message: error?.localizedDescription, target: self)
+            } else {
+                self.performSegue(withIdentifier: "toTabBarVC", sender: nil)
+            }
+        }
     }
     
     @IBAction func signInButtonTapped(){
