@@ -8,5 +8,6 @@ target 'PhotoShareFirebase' do
   # Pods for PhotoShareFirebase
   pod 'FirebaseAuth'
   pod 'FirebaseFirestore'
+  pod 'FirebaseStorage'
 
 end

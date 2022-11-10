@@ -16,6 +16,7 @@
 		CA88A546291947BB003C6E67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA88A545291947BB003C6E67 /* Assets.xcassets */; };
 		CA88A549291947BB003C6E67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA88A547291947BB003C6E67 /* LaunchScreen.storyboard */; };
 		CA88A55129195A11003C6E67 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA88A55029195A11003C6E67 /* SettingsViewController.swift */; };
+		CAB8CA1B291CD8A5007FD4D8 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB8CA1A291CD8A5007FD4D8 /* FeedViewController.swift */; };
 		CAF91CBF291A380C00CC9D57 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CAF91CBE291A380C00CC9D57 /* GoogleService-Info.plist */; };
 		F7D8271808A75FD57C97921D /* Pods_PhotoShareFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 711D2002F8E27550D4D06786 /* Pods_PhotoShareFirebase.framework */; };
 /* End PBXBuildFile section */
@@ -34,6 +35,7 @@
 		CA88A548291947BB003C6E67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA88A54A291947BB003C6E67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA88A55029195A11003C6E67 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		CAB8CA1A291CD8A5007FD4D8 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		CAF91CBE291A380C00CC9D57 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E72B36C681DE56A85949740A /* Pods-PhotoShareFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoShareFirebase.release.xcconfig"; path = "Target Support Files/Pods-PhotoShareFirebase/Pods-PhotoShareFirebase.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,6 +84,7 @@
 				CA88A54A291947BB003C6E67 /* Info.plist */,
 				CAF91CBE291A380C00CC9D57 /* GoogleService-Info.plist */,
 				CA857492291A65390070C580 /* AlertModel.swift */,
+				CAB8CA1A291CD8A5007FD4D8 /* FeedViewController.swift */,
 			);
 			path = PhotoShareFirebase;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				CA88A53F291947B5003C6E67 /* SceneDelegate.swift in Sources */,
 				CA857493291A65390070C580 /* AlertModel.swift in Sources */,
 				CA88A55129195A11003C6E67 /* SettingsViewController.swift in Sources */,
+				CAB8CA1B291CD8A5007FD4D8 /* FeedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

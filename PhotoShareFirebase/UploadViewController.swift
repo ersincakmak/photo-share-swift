@@ -10,6 +10,7 @@ import Photos
 import PhotosUI
 import FirebaseFirestore
 import FirebaseAuth
+import FirebaseStorage
 
 class UploadViewController: UIViewController {
     
@@ -78,30 +79,43 @@ class UploadViewController: UIViewController {
     }
     
     @IBAction func uploadButtonTapped(_ sender: Any) {
-        let firestore = Firestore.firestore()
-        
         guard
             let title = textField.text,
             let image = imageView.image,
-            let base64Image = image.jpegData(compressionQuality: 0.25)?.base64EncodedData()
+            let imageData = image.jpegData(compressionQuality: 0.25)
         else { return }
         
-        let post = [
-            "title": title,
-            "image": base64Image,
-            "owner": Auth.auth().currentUser?.email ?? "unknown user"
-        ] as [String : Any]
+        let firestore = Firestore.firestore()
+        let storageRef = Storage.storage().reference()
+        let imageRef = storageRef.child("media").child("\(UUID().uuidString).jpg")
         
-        firestore.collection("posts").addDocument(data: post) { error in
+        imageRef.putData(imageData) { metadata, error in
             if error != nil {
-                print(error?.localizedDescription ?? "There was an error occurred while uploading post")
+                print("There was an error occurred while uploading image to storage")
             } else {
-                self.resetValues()
-                self.tabBarController?.selectedIndex = 0
+                imageRef.downloadURL { url, error in
+                    if error != nil {
+                        print("There was an error occurred while downloading image url from storage")
+                    } else {
+                        let post = [
+                            "title": title,
+                            "image": url?.absoluteString ?? "",
+                            "owner": Auth.auth().currentUser?.email ?? "unknown user"
+                        ] as [String : Any]
+                        
+                        firestore.collection("posts").addDocument(data: post) { error in
+                            if error != nil {
+                                print(error?.localizedDescription ?? "There was an error occurred while uploading post")
+                            } else {
+                                self.resetValues()
+                                self.tabBarController?.selectedIndex = 0
+                            }
+                        }
+                    }
+                }
             }
         }
     }
-    
 }
 
 extension UploadViewController: PHPickerViewControllerDelegate {

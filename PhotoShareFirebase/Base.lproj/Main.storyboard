@@ -233,14 +233,23 @@
         <!--Feed-->
         <scene sceneID="Qb7-Tc-czt">
             <objects>
-                <viewController id="y2a-75-PrO" sceneMemberID="viewController">
+                <viewController id="y2a-75-PrO" customClass="FeedViewController" customModule="PhotoShareFirebase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zYj-2d-FPN">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fug-gr-OvY">
+                                <rect key="frame" x="75" y="89" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="qDD-aI-wGk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Feed" image="house" catalog="system" id="Bmd-5k-DS0"/>
+                    <connections>
+                        <outlet property="imageView" destination="fug-gr-OvY" id="Urc-wZ-oCK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SaK-z6-cFe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
