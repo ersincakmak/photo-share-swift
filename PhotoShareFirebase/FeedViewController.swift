@@ -8,7 +8,7 @@
 import UIKit
 import FirebaseFirestore
 
-class FeedViewController: UIViewController {
+class FeedViewController: UIViewController, CustomAlertController {
     @IBOutlet weak var tableView: UITableView!
     
     var posts = [Post]()
@@ -28,6 +28,7 @@ class FeedViewController: UIViewController {
         let firestore = Firestore.firestore()
         firestore.collection("posts").addSnapshotListener { snapshot, error in
             if error != nil {
+                self.showAlert(message: error?.localizedDescription, target: self)
                 print("There was an error occurred while fetching posts")
             } else {
                 guard let snapshot = snapshot, !snapshot.isEmpty else { return }

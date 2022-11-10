@@ -12,7 +12,7 @@ import FirebaseFirestore
 import FirebaseAuth
 import FirebaseStorage
 
-class UploadViewController: UIViewController {
+class UploadViewController: UIViewController, CustomAlertController {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textField: UITextField!
@@ -91,10 +91,12 @@ class UploadViewController: UIViewController {
         
         imageRef.putData(imageData) { metadata, error in
             if error != nil {
+                self.showAlert(message: error?.localizedDescription, target: self)
                 print("There was an error occurred while uploading image to storage")
             } else {
                 imageRef.downloadURL { url, error in
                     if error != nil {
+                        self.showAlert(message: error?.localizedDescription, target: self)
                         print("There was an error occurred while downloading image url from storage")
                     } else {
                         let post = [
@@ -105,6 +107,7 @@ class UploadViewController: UIViewController {
                         
                         firestore.collection("posts").addDocument(data: post) { error in
                             if error != nil {
+                                self.showAlert(message: error?.localizedDescription, target: self)
                                 print(error?.localizedDescription ?? "There was an error occurred while uploading post")
                             } else {
                                 self.resetValues()
