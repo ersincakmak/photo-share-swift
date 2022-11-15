@@ -10,7 +10,7 @@ First of all you need to create an firebase applicaton, you can find out how to 
 
 ### Pods
 
-Open a terminal and go to the project root and just execure pod install command.
+Open a terminal,  go to the project root and execute pod install command.
 
 ## Screenshots
 
